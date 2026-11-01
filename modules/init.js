@@ -22,7 +22,7 @@ Hooks.on('getCompendiumContextOptions', (_, menuitems) => {
 async function exportCompendium(li) {
     const packName = li.dataset.pack;
     const pack = game.packs.get(packName);
-    new Exporter(pack).render(true);
+    new Exporter(pack).render({ force: true });
 }
 
 class Exporter extends foundry.applications.api.HandlebarsApplicationMixin(foundry.applications.api.ApplicationV2) {
